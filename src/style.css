@@ -5,12 +5,17 @@ body {
 }
 
 .carta {
-  width: 30%;
+  width: 350px;
   border: 1px solid black;
   margin: auto;
   border-radius: 5px;
   background-color: white;
   margin-top: 50px;
+}
+
+.center {
+  display: block;
+  margin: auto;
 }
 
 .header {

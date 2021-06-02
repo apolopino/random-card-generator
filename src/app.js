@@ -2,26 +2,32 @@
 import "bootstrap";
 import "./style.css";
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
+const pinta = [" spades", " clubs", " hearts", " diams"];
+const num = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"];
+const pintas = document.getElementsByClassName("pinta");
+const num2 = document.getElementById("numero");
 
-window.onload = function() {
-  let pinta = [" spades", " clubs", " hearts", " diams"];
-  let num = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"];
-
+function randomize() {
   let randPinta = Math.floor(Math.random() * pinta.length);
-  let pintaClass = pinta.[randPinta];
+  console.log(pinta[randPinta]);
   let randNum = Math.floor(Math.random() * num.length);
 
-  this.console.log(pinta[randPinta]);
+  num2.innerHTML = num[randNum];
 
-  this.document.getElementById("numero").innerHTML = num[randNum];
-
-  
-  let element = document.getElementsByClassName("pinta");
-  for (let i = 0 ; i < element.length ; i++) {
-      element[i].className += pinta.[randPinta];
+  //   Tengo que remover las clases antes del for
+  /*
+  Deberia: 
+  1. identificar si hay una clase en objeto pintas que sea pinta. (for + if?)
+  2. Remover esa clase
+  3. Añadir la nueva clase
+  */
+  for (let i = 0; i < pintas.length; i++) {
+    pintas[i].className += pinta[randPinta];
   }
-  
+}
 
+window.onload = () => {
+  randomize();
 };
+
+document.getElementById("boton").addEventListener("click", randomize);
