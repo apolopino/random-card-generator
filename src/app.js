@@ -21,8 +21,9 @@ function randomize() {
   2. Remover esa clase
   3. Añadir la nueva clase
   */
+
   for (let i = 0; i < pintas.length; i++) {
-    pintas[i].className += pinta[randPinta];
+    pintas[i].className = "pinta" + pinta[randPinta];
   }
 }
 
